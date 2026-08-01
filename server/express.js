@@ -4,7 +4,12 @@ import morgan from 'morgan'
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://profile-react-jvg1.onrender.com"
+    ]
+}));
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
