@@ -20,6 +20,7 @@ import UsersForm from "./pages/admin/UsersForm";
 
 import ProtectedRoute from "./components/ProtectedRoutes";
 import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
 
 // app page
 import { Routes, Route } from 'react-router-dom'
@@ -60,8 +61,9 @@ function App() {
         <Route path = "/admin/users/add" element = {<ProtectedRoute> <UsersForm/> </ProtectedRoute>}/>
         <Route path = "/admin/users/edit/:id" element = {<ProtectedRoute> <UsersForm/> </ProtectedRoute>}/>
 
-        {/* Adds sign in page */}
+        {/* Adds authentication pages */}
         <Route path = "/signin" element = {<Signin/>} />
+        <Route path = "/signup" element = {<Signup/>}/>
 
       </Routes>
 

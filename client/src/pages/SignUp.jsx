@@ -1,10 +1,10 @@
-import { useState, useEffect  } from "react";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect  } from "react";
 import { useParams} from "react-router-dom";
-import "../../styles/Admin.css";
+import "../styles/App.css";
+import "../styles/SignUp.css";
 
-//users form
-export default function UserForm() {
+export default function Signup () {
 
     const navigate = useNavigate();
     const { id } = useParams();
@@ -91,7 +91,7 @@ export default function UserForm() {
             }
         
             // if successful
-            navigate("/admin/users");
+            navigate("/");
 
         }catch (err) {
             console.error(err);
@@ -102,53 +102,50 @@ export default function UserForm() {
     }
 
     return(
-    <div className = "adminContainer">
-        <form onSubmit = {handleSubmit}>
-            <h1>
-                {id ? "Edit User" : "Add User"}
-            </h1>
+    <div>
+        <h1>Create an Account</h1>
+        <div className = "signUpContent">
+            <form onSubmit = {handleSubmit}>
+                <div className = "signupInput">
+                    <label>First Name </label>
+                    <input name = "fName"
+                    value = {user.fName}
+                    onChange={handleChange}
+                    required
+                    />
 
-            <div className = "formContainer">
-                <label>First Name </label>
-                <input name = "fName"
-                value = {user.fName}
-                onChange={handleChange}
-                required
-                />
+                    <label>Last Name </label>
+                    <input name = "lName"
+                    value = {user.lName}
+                    onChange={handleChange}
+                    required
+                    />
 
-                <label>Last Name </label>
-                <input name = "lName"
-                value = {user.lName}
-                onChange={handleChange}
-                required
-                />
+                    <label>Email</label>
+                    <input name = "email"
+                    type = "email"
+                    value = {user.email}
+                    onChange={handleChange}
+                    required
+                    />
 
-                <label>Email</label>
-                <input name = "email"
-                type = "email"
-                value = {user.email}
-                onChange={handleChange}
-                required
-                />
+                    <label>Password</label>
+                    <input name = "password"
+                    type= "password"
+                    value = {user.password}
+                    onChange={handleChange}
+                    required
+                    minLength = {8}
+                    />
 
-                <label>Password</label>
-                <input name = "password"
-                type= "password"
-                value = {user.password}
-                onChange={handleChange}
-                required
-                minLength = {8}
-                />
-
-                <div className = "submitButton">
-                    <button type = "submit">
-                    Save User
-                    </button>
+                    <div className = "submitButton">
+                        <button type = "submit">
+                        Save User
+                        </button>
+                    </div>
                 </div>
-                
-            </div>
-        </form>
+            </form>
         </div>
+    </div>
     );
-
 }

@@ -36,4 +36,20 @@
     object-fit: contain;
 }
 
+.nav-links button {
+    background: none;
+    border: none;
+    color: #F4EEF3;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+    align-self: center;
+}
 
+.nav-links button:hover {
+    color: #7FBACB;
+}

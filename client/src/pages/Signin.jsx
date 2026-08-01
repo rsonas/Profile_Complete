@@ -43,7 +43,7 @@ export default function Signin() {
 
     //come bacn and apply css
     return (
-        <div className = "SignInComponent">
+        <div>
             <h1>Sign In</h1>
             <div className = "signInContent">
                 <form onSubmit = { submit }>
