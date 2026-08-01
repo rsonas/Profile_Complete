@@ -1,9 +1,9 @@
 import Card from '../components/Card';
 import "../styles/Projects.css";
 import "../styles/Card.css";
-import circularlyLinkedLists from "../assets/circularlylinkedlist.png";
-import debugJava from "../assets/debugjava.png";
-import pythonPizza from "../assets/pythonpizza.png";
+import circularlyLinkedLists from "../assets/circularlylinkedlist.webp";
+import debugJava from "../assets/debugjava.webp";
+import pythonPizza from "../assets/pythonpizza.webp";
 
 //projects page
 export default function Projects() {
@@ -15,7 +15,7 @@ export default function Projects() {
             image: circularlyLinkedLists,
             description: "In this program our task was to create a circularly linked list, duplicate it, and rotate it so the starting position was not the same. We then needed to create a method in order to test if these two linked lists were the same. When creating the method if you do not take the different starts into account, your method will give the wrong answer as the starting element is different. This method first searches through both lists and loops comparing the first element of the first list to each element in the second. Once it finds a match, it will then loop through the lists and compare both elements to check if they are in the same order. If they are all the same, the Boolean method returns true. if not, it returns false",
             dateCompleted: "Completed: May 31st, 2026",
-            alt: "A screenshot of code written in Java with a dark grey background and colourful font"
+            alt: "A screenshot of code written in Java with a dark grey background and colourful font",
         },
         {
             title: "Java Code Cleanup",
@@ -44,7 +44,7 @@ export default function Projects() {
                         <Card
                             key = {index}
                             header = {project.title}
-                            media = {<img src={project.image} alt={project.alt} />}
+                            media = {<img src={project.image} alt={project.alt} width="800" height="600" fetchPriority={index === 0 ? "high" : "auto"} loading={index === 0 ? "eager" : "lazy"}/>}
                             body = {project.description}
                             footer = {project.dateCompleted}
                             />

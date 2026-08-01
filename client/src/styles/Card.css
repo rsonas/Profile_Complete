@@ -39,7 +39,7 @@
 /* formats media in projects card */
 .projectsGrid .cardMedia {
     width: 100%;
-    height: 700px; 
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     margin-bottom: 30px;
 }
@@ -50,4 +50,5 @@
     object-fit: contain;
     display: block;
     margin-top: 30px;
+    max-height:1000px;
 }
