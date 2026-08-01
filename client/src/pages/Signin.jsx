@@ -39,6 +39,8 @@ export default function Signin() {
         localStorage.setItem("token", data.token);
 
         navigate('/admin');
+
+        console.log(import.meta.env.VITE_API_URL);
     }
 
     //come bacn and apply css
