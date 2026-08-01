@@ -20,7 +20,7 @@ import UsersForm from "./pages/admin/UsersForm";
 
 import ProtectedRoute from "./components/ProtectedRoutes";
 import Signin from "./pages/Signin";
-import Signup from "./pages/SignUp";
+import SignUp from "./pages/SignUp";
 
 // app page
 import { Routes, Route } from 'react-router-dom'

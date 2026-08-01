@@ -7,7 +7,7 @@ const app = express()
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://profile-react-jvg1.onrender.com"
+        "https://profile-complete.onrender.com/"
     ]
 }));
 app.use(morgan('dev'))
