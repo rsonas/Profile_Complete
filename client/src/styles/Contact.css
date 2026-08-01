@@ -73,10 +73,12 @@ button {
     border-radius: 12px;
     padding:20px;
     font-size: 24px;
+    cursor: pointer;
 }
+
 button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
 }
 
 

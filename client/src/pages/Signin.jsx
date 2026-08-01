@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import "../styles/App.css";
+import "../styles/Signin.css";
 
 // sign in page
 export default function Signin() {
@@ -42,23 +43,31 @@ export default function Signin() {
 
     //come bacn and apply css
     return (
+        <div className = "SignInComponent">
+            <h1>Sign In</h1>
+            <div className = "signInContent">
+                <form onSubmit = { submit }>
+                    <div className = "loginInput">
+                        <label>Email: </label>
+                            <input 
+                                onChange = {e=>setEmail(e.target.value)}
+                            />
 
-        <form onSubmit = { submit }>
+                        <label>Password: </label>
+                            <input 
+                                type= "password"
+                                onChange = {e=>setPassword(e.target.value)}
+                            />
+                    </div>
+                
 
-            <input 
-                onChange = {e=>setEmail(e.target.value)}
-            />
+                    <button>
+                        Log In
+                    </button>
 
-            <input 
-                type= "password"
-                onChange = {e=>setPassword(e.target.value)}
-            />
-
-            <button>
-                Login
-            </button>
-
-        </form>
+                </form>
+            </div>
+        </div>
     )
 
 }
