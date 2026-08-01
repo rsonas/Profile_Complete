@@ -20,7 +20,7 @@ import UsersForm from "./pages/admin/UsersForm";
 
 import ProtectedRoute from "./components/ProtectedRoutes";
 import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
+import Signup from "./pages/SignUp";
 
 // app page
 import { Routes, Route } from 'react-router-dom'
@@ -63,7 +63,7 @@ function App() {
 
         {/* Adds authentication pages */}
         <Route path = "/signin" element = {<Signin/>} />
-        <Route path = "/signup" element = {<Signup/>}/>
+        <Route path = "/signup" element = {<SignUp/>}/>
 
       </Routes>
 
