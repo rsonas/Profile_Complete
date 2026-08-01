@@ -8,7 +8,7 @@ app.use(cors({
     origin: [
         "http://localhost:5173",
         "https://profile-complete.onrender.com/"
-    ]
+    ], credentials: true
 }));
 app.use(morgan('dev'))
 app.use(express.json())
