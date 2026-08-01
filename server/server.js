@@ -5,7 +5,9 @@ import mongoose from 'mongoose'
 import referenceRoutes from "./routes/references.routes.js"
 import projectRoutes from "./routes/projects.routes.js"
 import serviceRoutes from "./routes/services.routes.js"
+
 import userRoutes from "./routes/users.routes.js"
+import authRoutes from "./routes/auth.routes.js"
 
 mongoose.connect(config.mongoUri)
     .then(() => console.log("Connected to database"))
@@ -15,10 +17,13 @@ mongoose.connection.on('error', () => {
 })
 
 // routes
+app.use("/api/auth", authRoutes)
 app.use("/api/references", referenceRoutes)
 app.use("/api/projects", projectRoutes)
 app.use("/api/services", serviceRoutes)
+
 app.use("/api/users", userRoutes)
+app.use("/api/auth", authRoutes)
 
 
 app.use((err, req, res, next) => {

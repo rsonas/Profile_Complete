@@ -53,34 +53,54 @@ export default function UserForm() {
 
     //handles submitting information
     async function handleSubmit(event) {
+
         event.preventDefault();
         
         //console.log(user);
 
-        //if it is updating a user
-        if (id) {
-            await fetch(
-            `${import.meta.env.VITE_API_URL}/api/users/${id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type":"application/json"
-            },
+        try {
 
-            body:JSON.stringify(user)
-        });
-        //if it is submitting a new user
-        }else {
-            await fetch(
-            `${import.meta.env.VITE_API_URL}/api/users`, {
-            method: "POST",
-            headers: {
-                "Content-Type":"application/json"
-            },
+            //if it is updating a user
+            if (id) {
+                await fetch(
+                `${import.meta.env.VITE_API_URL}/api/users/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type":"application/json"
+                },
 
-            body:JSON.stringify(user)
-        });
+                body:JSON.stringify(user)
+            });
+            //if it is submitting a new user
+            }else {
+                const response = await fetch(
+                `${import.meta.env.VITE_API_URL}/api/users`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":"application/json"
+                },
+
+                body:JSON.stringify(user)
+            });
+
+                const result = await response.json() 
+
+                // stops rerouting if user entry is not suvcesful 
+                if (!response.ok) {
+                    alert(result.message);
+                    return;
+                }
+
+            }
+        
+            navigate("/admin/users");
+
+        }catch (err) {
+            console.error(err);
+            alert("Unable to create new user");
         }
-        navigate("/admin/users");
+
+        
     }
 
     return(
@@ -95,18 +115,22 @@ export default function UserForm() {
                 <input name = "fName"
                 value = {user.fName}
                 onChange={handleChange}
+                required
                 />
 
                 <label>Last NAme </label>
                 <input name = "lName"
                 value = {user.lName}
                 onChange={handleChange}
+                required
                 />
 
                 <label>Email</label>
                 <input name = "email"
+                type = "email"
                 value = {user.email}
                 onChange={handleChange}
+                required
                 />
 
                 <label>Created </label>
@@ -123,8 +147,11 @@ export default function UserForm() {
 
                 <label>Password</label>
                 <input name = "password"
+                type= "password"
                 value = {user.password}
                 onChange={handleChange}
+                required
+                minLength = {8}
                 />
 
                 <div className = "submitButton">

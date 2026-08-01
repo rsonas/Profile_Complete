@@ -3,7 +3,22 @@ import User from "../models/users.model.js";
 //adds new user
 export const addUser = async (req, res, next) => {
     try {
-        const user = await User.create(req.body);
+
+        // checks if email is in use
+        const existingUser = await User.findOne({
+            email: req.body.email
+        });
+
+        if (existingUser) {
+            return res.status(400).json({
+                success: false,
+                message: "Email already exists"
+            });
+        }
+        
+        const user = new User(req.body);
+
+        await user.save();
 
         const data = {
             ...user.toObject(),
@@ -19,6 +34,7 @@ export const addUser = async (req, res, next) => {
             message: "User added successfully",
             data
         });
+
     } catch (err) {
         next(err);
     }

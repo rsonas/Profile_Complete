@@ -18,6 +18,9 @@ import ReferencesForm from "./pages/admin/ReferencesForm";
 import UsersList from "./pages/admin/UsersList";
 import UsersForm from "./pages/admin/UsersForm";
 
+import ProtectedRoute from "./components/ProtectedRoutes";
+import Signin from "./pages/Signin";
+
 // app page
 import { Routes, Route } from 'react-router-dom'
 function App() {
@@ -35,27 +38,30 @@ function App() {
         <Route path= "/projects" element = {<Projects/>}/>
         <Route path= "/references" element = {<References/>}/>
         <Route path= "/services" element = {<Services/>}/>
-        <Route path= "/admin" element = {<Admin/>}/>
+        <Route path= "/admin" element = {<ProtectedRoute> <Admin/> </ProtectedRoute>}/> 
 
         {/* Adding new routes to  PROJECTS forms and pages */}
-        <Route path = "/admin/projects" element = {<ProjectsList/>}/>
-        <Route path = "/admin/projects/add" element = {<ProjectsForm/>}/>
-        <Route path = "/admin/projects/edit/:id" element = {<ProjectsForm/>}/>
+        <Route path = "/admin/projects" element = {<ProtectedRoute> <ProjectsList/> </ProtectedRoute>}/>
+        <Route path = "/admin/projects/add" element = {<ProtectedRoute> <ProjectsForm/></ProtectedRoute>}/>
+        <Route path = "/admin/projects/edit/:id" element = {<ProtectedRoute> <ProjectsForm/> </ProtectedRoute>}/>
 
         {/* Adding new routes to SERVICES forms and pages */}
-        <Route path = "/admin/services" element = {<ServicesList/>}/>
-        <Route path = "/admin/services/add" element = {<ServicesForm/>}/>
-        <Route path = "/admin/services/edit/:id" element = {<ServicesForm/>}/>
+        <Route path = "/admin/services" element = {<ProtectedRoute> <ServicesList/> </ProtectedRoute>}/>
+        <Route path = "/admin/services/add" element = {<ProtectedRoute> <ServicesForm/> </ProtectedRoute>}/>
+        <Route path = "/admin/services/edit/:id" element = {<ProtectedRoute> <ServicesForm/> </ProtectedRoute>}/>
 
         {/* Adding new routes to REFERENCES forms and pages */}
-        <Route path = "/admin/references" element = {<ReferencesList/>}/>
-        <Route path = "/admin/references/add" element = {<ReferencesForm/>}/>
-        <Route path = "/admin/references/edit/:id" element = {<ReferencesForm/>}/>
+        <Route path = "/admin/references" element = {<ProtectedRoute> <ReferencesList/></ProtectedRoute>}/>
+        <Route path = "/admin/references/add" element = {<ProtectedRoute> <ReferencesForm/> </ProtectedRoute>}/>
+        <Route path = "/admin/references/edit/:id" element = {<ProtectedRoute> <ReferencesForm/> </ProtectedRoute>}/>
 
         {/* Adding new routes to USERS forms and pages */}
-        <Route path = "/admin/users" element = {<UsersList/>}/>
-        <Route path = "/admin/users/add" element = {<UsersForm/>}/>
-        <Route path = "/admin/users/edit/:id" element = {<UsersForm/>}/>
+        <Route path = "/admin/users" element = {<ProtectedRoute> <UsersList/> </ProtectedRoute>}/>
+        <Route path = "/admin/users/add" element = {<ProtectedRoute> <UsersForm/> </ProtectedRoute>}/>
+        <Route path = "/admin/users/edit/:id" element = {<ProtectedRoute> <UsersForm/> </ProtectedRoute>}/>
+
+        {/* Adds sign in page */}
+        <Route path = "/signin" element = {<Signin/>} />
 
       </Routes>
 
