@@ -50,11 +50,13 @@ export default function Signin() {
                     <div className = "loginInput">
                         <label>Email: </label>
                             <input 
+                                name="email"
                                 onChange = {e=>setEmail(e.target.value)}
                             />
 
                         <label>Password: </label>
                             <input 
+                            name="password"
                                 type= "password"
                                 onChange = {e=>setPassword(e.target.value)}
                             />

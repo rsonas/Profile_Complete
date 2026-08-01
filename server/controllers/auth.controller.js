@@ -1,19 +1,16 @@
 import User from "../models/users.model.js";
 import jwt from "jsonwebtoken";
 
-
+//validates users login info
 export async function signin(req,res){
 
     try {
-
-        console.log(req.body);
 
         const user = await User.findOne({
             email:req.body.email
         });
 
-        console.log(user);
-
+        //checks if user exists
         if(!user){
             return res.status(401).json({
                 success:false,
@@ -21,7 +18,7 @@ export async function signin(req,res){
             });
         }
 
-
+        //checks if password is correct
         if(!user.authenticate(req.body.password)){
             return res.status(401).json({
                 success:false,
@@ -29,7 +26,7 @@ export async function signin(req,res){
             });
         }
 
-
+        // creates token
         const token = jwt.sign(
             {id:user._id},
             process.env.JWT_SECRET,
@@ -37,7 +34,6 @@ export async function signin(req,res){
                 expiresIn:"1h"
             }
         );
-
 
         return res.json({
             success:true,
@@ -47,7 +43,6 @@ export async function signin(req,res){
                 email:user.email
             }
         });
-
 
     }
     catch(error){

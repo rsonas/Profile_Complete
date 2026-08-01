@@ -62,7 +62,8 @@ export default function UserForm() {
                 `${import.meta.env.VITE_API_URL}/api/users/${id}`, {
                 method: "PUT",
                 headers: {
-                    "Content-Type":"application/json"
+                    "Content-Type":"application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
                 },
 
                 body:JSON.stringify(user)
@@ -74,7 +75,8 @@ export default function UserForm() {
                 `${import.meta.env.VITE_API_URL}/api/users`, {
                     method: "POST",
                     headers: {
-                        "Content-Type":"application/json"
+                        "Content-Type":"application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
                 },
 
                 body:JSON.stringify(user)

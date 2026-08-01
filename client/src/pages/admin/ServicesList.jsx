@@ -31,7 +31,10 @@ export default function ServicesList() {
     async function deleteService(id) {
         await fetch(
             `${import.meta.env.VITE_API_URL}/api/services/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
             }
         );
     fetchServices();

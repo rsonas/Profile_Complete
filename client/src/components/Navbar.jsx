@@ -39,7 +39,7 @@ export default function Navbar () {
                     </button>
                 ) : (
                     <Link to="/signin">
-                        Sign in
+                        Sign In
                     </Link>
                 )}
             </nav>

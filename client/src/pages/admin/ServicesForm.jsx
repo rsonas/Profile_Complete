@@ -59,7 +59,8 @@ export default function ServiceForm() {
             `${import.meta.env.VITE_API_URL}/api/services/${id}`, {
             method: "PUT",
             headers: {
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`
             },
 
             body:JSON.stringify(service)
@@ -70,7 +71,8 @@ export default function ServiceForm() {
             `${import.meta.env.VITE_API_URL}/api/services`, {
             method: "POST",
             headers: {
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`
             },
 
             body:JSON.stringify(service)

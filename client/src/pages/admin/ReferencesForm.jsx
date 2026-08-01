@@ -60,7 +60,8 @@ export default function ReferenceForm() {
             `${import.meta.env.VITE_API_URL}/api/references/${id}`, {
             method: "PUT",
             headers: {
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`
             },
 
             body:JSON.stringify(reference)
@@ -71,7 +72,8 @@ export default function ReferenceForm() {
             `${import.meta.env.VITE_API_URL}/api/references`, {
             method: "POST",
             headers: {
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`
             },
 
             body:JSON.stringify(reference)

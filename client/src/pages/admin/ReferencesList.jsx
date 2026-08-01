@@ -31,7 +31,10 @@ export default function ReferencesList() {
     async function deleteReference(id) {
         await fetch(
             `${import.meta.env.VITE_API_URL}/api/references/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
             }
         );
     fetchReferences();

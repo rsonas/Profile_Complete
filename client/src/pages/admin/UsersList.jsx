@@ -31,7 +31,10 @@ export default function UsersList() {
     async function deleteUser(id) {
         await fetch(
             `${import.meta.env.VITE_API_URL}/api/users/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
             }
         );
     fetchUsers();

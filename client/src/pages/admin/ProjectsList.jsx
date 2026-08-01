@@ -31,7 +31,10 @@ export default function ProjectsList() {
     async function deleteProject(id) {
         await fetch(
             `${import.meta.env.VITE_API_URL}/api/projects/${id}`, {
-            method: "DELETE"
+            method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
             }
         );
     fetchProjects();

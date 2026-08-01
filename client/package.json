@@ -13,7 +13,7 @@
     
   "node": "20.x"
   
- },
+  },
   
   "scripts": {
   
@@ -69,6 +69,9 @@
   
     
   "@vitejs/plugin-react": "^4.3.0",
+  
+    
+  "cypress": "^15.19.0",
   
     
   "vite": "^5.4.0"

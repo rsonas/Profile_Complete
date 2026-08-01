@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 import crypto from "crypto";
 
-//will add role to assignment 4 when we add authentication
 const userSchema = new mongoose.Schema({
 
     fName: {
@@ -37,6 +36,7 @@ const userSchema = new mongoose.Schema({
     salt: String
 });
 
+//encrypts password
 userSchema.virtual('password')
 .set(function(password) {
 
