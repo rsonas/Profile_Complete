@@ -20,8 +20,6 @@ export default function Signin() {
                 method: "POST",
                 headers: {
                     "Content-Type":"application/json",
-                    "Authorization":
-                    `Bearer ${localStorage.getItem("token")}`
                 },
                 body:JSON.stringify({
                     email,
