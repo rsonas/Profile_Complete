@@ -21,9 +21,7 @@ app.use("/api/auth", authRoutes)
 app.use("/api/references", referenceRoutes)
 app.use("/api/projects", projectRoutes)
 app.use("/api/services", serviceRoutes)
-
 app.use("/api/users", userRoutes)
-app.use("/api/auth", authRoutes)
 
 
 app.use((err, req, res, next) => {
