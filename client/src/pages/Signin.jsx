@@ -16,7 +16,7 @@ export default function Signin() {
         e.preventDefault();
 
         const response = await fetch(
-            "http://localhost:3000/api/auth/signin", {
+            `${import.meta.env.VITE_API_URL}/api/auth/signin`, {
                 method: "POST",
                 headers: {
                     "Content-Type":"application/json",
