@@ -1,0 +1,61 @@
+/*
+    HOME LAGOUT
+*/
+
+
+/*firast container */
+.homeContainer {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+}
+.homeContainer h1 {
+    margin-bottom: 10px;
+    margin: 40px;
+}
+.homeContainer p {
+    margin: 10px auto;
+    line-height: 1.5;
+    font-size: 24px;
+}
+.content {
+    width: 100%;
+    max-width: 14000px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #7A746D;
+}
+
+
+/*redirect buttons */
+/*space out layout of buttons */
+.redirects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    min-width: 1000px;
+    margin: 40px auto;
+    padding: 10px;
+}
+
+/*button interaction and colouring */
+.redirects button {
+    width:100%;
+    padding: 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #3C8BA5;
+    color: #F4EEF3;
+    font-size: 20px;
+}
+.redirects button:hover {
+    transform: translateY(-5px);
+    background-color: #7FBACB;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}

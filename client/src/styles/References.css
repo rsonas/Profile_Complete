@@ -1,0 +1,15 @@
+/*
+    REFERENCES LAGOUT
+*/
+
+/* reference boxes */
+.referenceContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap; 
+    padding: 20px;
+    font-size: 20px;
+}

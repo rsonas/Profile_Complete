@@ -1,0 +1,27 @@
+/*
+    PROJECTS LAGOUT
+*/
+
+
+/* creates grid for project */
+.projectsGrid {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    align-items: center;
+}
+
+.projectsContainer {
+    padding: 40px 20px;
+}
+
+.projectsContainer h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.cardBody {
+    font-size: 20px;
+}
+

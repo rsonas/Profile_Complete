@@ -1,0 +1,39 @@
+/*
+    NAVBAR LAGOUT
+*/
+
+/* creates navigation bar */
+.navbar {
+    position:sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color: #3C8BA5;
+}
+/* navigation link */
+.nav-links {
+    font-size:20px;
+    display: flex;
+    gap: 40px;
+    margin-left: auto;
+}
+/* navigation link appearance */
+.nav-links a {
+    color:#F4EEF3;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 40px;
+}
+.nav-links a:hover {
+    color: #7FBACB;
+}
+
+.logo {
+    float: left;
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+}
+
+

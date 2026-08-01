@@ -1,0 +1,64 @@
+/*
+    ABOUT LAGOUT
+*/
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+h1 {
+    color: #2F303D;
+    font-size: 60px;
+}
+
+
+/* first container */
+.content {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 900px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    color: #F4EEF3;
+}
+.content p {
+    margin-bottom: 10px;
+}
+/* image formatting */
+.headshot {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+/* first container text */
+.aboutContainer p:first-of-type {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #F4EEF3;
+}
+/* formats text to left */
+.text {
+    flex: 1;
+    text-align: left;
+    font-size: 20px;
+}
+
+/* resume frame */
+iframe {
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}

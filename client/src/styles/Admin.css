@@ -1,0 +1,90 @@
+/* 
+    Modify by next project release, improve structure/layout
+*/
+/* 
+    ADMIN FILES LAYOUT
+*/
+
+.List {
+    border-radius: 12px;
+    padding:20px;
+    color: #F4EEF3;
+}
+
+.adminContent {
+    background-color: #7A746D;
+    border-radius: 12px;
+    padding: 40px 20px;
+    display: grid;
+    margin-bottom: 40px;;
+}
+
+.formContainer {
+    flex: 3; 
+    box-shadow: 0 0 3px #1b0000;
+    margin: 10px 10px 10px 0;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #7FBACB;
+    border-radius:12px;
+    gap: 10px;
+}
+
+.addNew {
+    width:100%;
+    padding: 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #7A746D;
+    color: #F4EEF3;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.addNew:hover {
+    transform: translateY(-5px);
+    background-color: #999288;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.editAndDelete {
+    padding: 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 20px;
+    display: flex;
+    gap: 40px;
+}
+
+.editAndDelete button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #F4EEF3;
+    color: #2F303D;
+    font-size: 18px;
+}
+
+.submitButton button{
+    width:100%;
+    padding: 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #7A746D;
+    color: #F4EEF3;
+    font-size: 20px;
+}
+.submitButton button:hover {
+    transform: translateY(-5px);
+    background-color: #999288;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}

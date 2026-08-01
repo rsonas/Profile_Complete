@@ -1,0 +1,22 @@
+/*
+    FOOTER LAGOUT
+*/
+
+/*footer box */
+.footer {
+    background-color: #2F303D;
+    color: #F4EEF3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footerItem {
+    display:flex;
+    flex-direction:column
+}
+.footerRow {
+    gap: 100px;
+    display:flex;
+    flex-direction:row
+}
