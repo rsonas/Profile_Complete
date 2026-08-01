@@ -4,7 +4,7 @@ import { useParams} from "react-router-dom";
 import "../styles/App.css";
 import "../styles/SignUp.css";
 
-export default function Signup () {
+export default function SignUp () {
 
     const navigate = useNavigate();
     const { id } = useParams();
