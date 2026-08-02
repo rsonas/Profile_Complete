@@ -12,13 +12,6 @@ export default function Card ({ header, media, body, footer }) {
                 </div>
             )}
 
-            {media && (
-                <div className="cardMedia">
-                    {media}
-
-                </div>
-            )}
-
             {body && (
                 <div className="cardBody">
                     {body}
