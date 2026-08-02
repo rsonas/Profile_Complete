@@ -1,39 +1,35 @@
 import Card from '../components/Card';
 import "../styles/References.css";
+import { useState, useEffect } from "react";
 
 //References page
 export default function References() {
 
-    //array of information with past references stored
-    //NOTE: currently do not have information to populate this, I have left this in to demonstrate i am able to create these. Will populate in future
-    const referenceData = [
-        {
-            name: "First Name",
-            job: "First Job/Position",
-            testimonial: "First Testimonial",
-        },
-        {
-            name: "Second Name",
-            job: "Second Job/Position",
-            testimonial: "Second Testimonial",
-        },
-        {
-            name: "Third Name",
-            job: "Third Job/Position",
-            testimonial: "Third Testimonial",
-        },
-        {
-            name: "Fourth Name",
-            job: "Fourth Job/Position",
-            testimonial: "Fourth Testimonial",
-        },
-    ];
+   const [references, setReference] = useState([]);
+   
+       useEffect(() => {
+           async function loadReferences() {
+               const response = await fetch (
+                   `${import.meta.env.VITE_API_URL}/api/references`
+               );
+   
+               const data = await response.json();
+   
+               if (response.ok) {
+                   setReferences(data.data);
+                   console.log(data.data);
+               }
+           }
+   
+           loadReferences();
+   
+       }, []);
 
     return (
         <div>
             <h1>References</h1>
             <div className = "referenceContainer">
-                {referenceData.map((reference, index) => (
+                {references.map((reference, index) => (
                     <Card
                         key = {index}
                         header = {reference.name}
