@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 //References page
 export default function References() {
 
-   const [references, setReference] = useState([]);
+   const [references, setReferences] = useState([]);
    
        useEffect(() => {
            async function loadReferences() {
@@ -31,9 +31,9 @@ export default function References() {
             <div className = "referenceContainer">
                 {references.map((reference, index) => (
                     <Card
-                        key = {index}
+                        key = {reference.id}
                         header = {reference.name}
-                        body = {reference.job}
+                        body = {`${reference.position} at ${reference.company}`}
                         footer = {reference.testimonial}
                 />
                 ))}
