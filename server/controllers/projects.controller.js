@@ -93,7 +93,8 @@ export const updateProject = async (req, res, next) => {
 
         res.json({
             success: true,
-            message: "Project updated successfully."
+            message: "Project updated successfully.",
+            data:project
         });
     }catch (err){
         next(err);
